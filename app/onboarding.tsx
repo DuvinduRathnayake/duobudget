@@ -355,7 +355,7 @@ export default function Onboarding() {
       </View>
 
       {/* Nav bar */}
-      {/* <View className='flex-row items-center justify-between pb-8'>
+      <View className='flex-row items-center justify-between pb-8'>
         {step > 0 ? (
           <Pressable onPress={handleBack} className='px-4 py-3'>
             <Text className='text-gray-700'>Back</Text>
@@ -386,7 +386,39 @@ export default function Onboarding() {
         ) : (
           <View style={{ width: 56 }} />
         )}
-      </View> */}
+      </View>
+      <View className='flex-row items-center justify-between pb-8'>
+        {step > 0 ? (
+          <Pressable onPress={handleBack} className='px-4 py-3'>
+            <Text className='text-gray-700'>Back</Text>
+          </Pressable>
+        ) : (
+          <View style={{ width: 56 }} />
+        )}
+
+        {step < 4 ? (
+          <Pressable
+            onPress={handleNext}
+            disabled={!canGoNext}
+            className='rounded-2xl px-6 py-3'
+            style={{
+              backgroundColor: canGoNext ? '#111827' : '#9CA3AF',
+            }}
+          >
+            <Text className='text-white'>{step === 3 ? 'Review' : 'Next'}</Text>
+          </Pressable>
+        ) : (
+          <View style={{ width: 56 }} />
+        )}
+
+        {step < 4 ? (
+          <Pressable onPress={handleSkip} className='px-4 py-3'>
+            <Text className='text-gray-500'>Skip</Text>
+          </Pressable>
+        ) : (
+          <View style={{ width: 56 }} />
+        )}
+      </View>
     </View>
   );
 }
