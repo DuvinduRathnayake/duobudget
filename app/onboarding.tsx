@@ -355,7 +355,7 @@ export default function Onboarding() {
       </View>
 
       {/* Nav bar */}
-      <View className='flex-row items-center justify-between pb-8'>
+      {/* <View className='flex-row items-center justify-between pb-8'>
         {step > 0 ? (
           <Pressable onPress={handleBack} className='px-4 py-3'>
             <Text className='text-gray-700'>Back</Text>
@@ -386,7 +386,7 @@ export default function Onboarding() {
         ) : (
           <View style={{ width: 56 }} />
         )}
-      </View>
+      </View> */}
     </View>
   );
 }
